@@ -1,0 +1,14 @@
+# CordycepOS - inicjalizacja środowiska BitBake
+# Użycie (z dowolnego katalogu):  source <ścieżka>/setup-env
+
+CORDYCEP_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [ ! -f "$CORDYCEP_ROOT/sources/openembedded-core/oe-init-build-env" ]; then
+    echo "Brak submodułów - uruchom: git submodule update --init" >&2
+    return 1
+fi
+
+# Szablony konfiguracji z naszej warstwy (używane tylko gdy build/conf nie istnieje)
+export TEMPLATECONF="$CORDYCEP_ROOT/meta-cordycep/conf/templates/default"
+
+source "$CORDYCEP_ROOT/sources/openembedded-core/oe-init-build-env" "$CORDYCEP_ROOT/build"
