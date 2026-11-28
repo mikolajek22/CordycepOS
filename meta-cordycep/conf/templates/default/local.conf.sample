@@ -18,8 +18,6 @@ ENABLE_UART = "1"
 DL_DIR ?= "${TOPDIR}/../downloads"
 SSTATE_DIR ?= "${TOPDIR}/../sstate-cache"
 
-EXTRA_IMAGE_FEATURES += "ssh-server-dropbear"
-
 # DEV ONLY: root no password
 EXTRA_IMAGE_FEATURES += "allow-empty-password empty-root-password allow-root-login"
 

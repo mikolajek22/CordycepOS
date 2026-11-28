@@ -5,7 +5,7 @@ LCONF_VERSION = "7"
 BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
-##OEROOT## = sources/openembedded-core (podmieniane przy tworzeniu build/conf)
+# Ścieżki względem sources/openembedded-core (znacznik OEROOT podmienia oe-init-build-env)
 BBLAYERS ?= " \
   ##OEROOT##/meta \
   ##OEROOT##/../meta-yocto/meta-poky \
